@@ -1,14 +1,18 @@
 #!/usr/bin/env python3
-"""
-task 2
+"""_summary_
+
+Returns:
+    _type_: _description_
 """
 from collections import OrderedDict
 from base_caching import BaseCaching
 
 
 class LIFOCache(BaseCaching):
-    """
-    anything
+    """_summary_
+
+    Args:
+        BaseCaching (_type_): _description_
     """
     def __init__(self):
         """
@@ -18,8 +22,11 @@ class LIFOCache(BaseCaching):
         self.cache_data = OrderedDict()
 
     def put(self, key, item):
-        """
-        anything
+        """_summary_
+
+        Args:
+            key (_type_): _description_
+            item (_type_): _description_
         """
         if key and item:
             if key not in self.cache_data:
@@ -32,7 +39,12 @@ class LIFOCache(BaseCaching):
             return
 
     def get(self, key):
-        """
-        anything
+        """_summary_
+
+        Args:
+            key (_type_): _description_
+
+        Returns:
+            _type_: _description_
         """
         return self.cache_data.get(key, None)

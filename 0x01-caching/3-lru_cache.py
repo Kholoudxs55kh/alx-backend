@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
-"""
-task 3
+"""_summary_
+
+Returns:
+    _type_: _description_
 """
 from collections import OrderedDict
 
@@ -8,19 +10,25 @@ from base_caching import BaseCaching
 
 
 class LRUCache(BaseCaching):
-    """
-    anything
+    """_summary_
+
+    Args:
+        BaseCaching (_type_): _description_
     """
     def __init__(self):
-        """
-        anything
+        """_summary_
+        Args:
+        Self: _description_
         """
         super().__init__()
         self.cache_data = OrderedDict()
 
     def put(self, key, item):
-        """
-        anything
+        """_summary_
+
+        Args:
+            key (_type_): _description_
+            item (_type_): _description_
         """
         if key is None or item is None:
             return
@@ -34,8 +42,13 @@ class LRUCache(BaseCaching):
             self.cache_data[key] = item
 
     def get(self, key):
-        """
-        anything
+        """_summary_
+
+        Args:
+            key (_type_): _description_
+
+        Returns:
+            _type_: _description_
         """
         if key is not None and key in self.cache_data:
             self.cache_data.move_to_end(key, last=False)
