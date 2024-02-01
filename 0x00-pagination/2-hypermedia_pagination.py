@@ -8,10 +8,10 @@ import csv
 from typing import List
 
 
-
 def index_range(page: int, page_size: int) -> tuple:
     """index range"""
     return ((page - 1) * page_size, page * page_size)
+
 
 class Server:
     """Server class to paginate a database of popular baby names.
@@ -49,10 +49,10 @@ class Server:
         """
         prev_page = 0
         next_page = 0
-        total_pages = Server.dataset(self)  
+        total_pages = Server.dataset(self)
         if page - 1 > 0:
             prev_page = page - 1
-        else :
+        else:
             prev_page = None
         if (page + 1) < total_pages:
             next_page = page + 1
@@ -68,4 +68,3 @@ class Server:
         dict_["total_pages"]: total_pages
 
         return dict_
-    
